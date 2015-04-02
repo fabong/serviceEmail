@@ -1,0 +1,99 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "serviceEmail API",
+        "description": "Send email with serviceEmail API",
+        "version": "0.0.1",
+        "termsOfService": "http://api.lineberty.net/terms/",
+        "contact": {
+            "name": "API Support",
+            "url": "http://www.lineberty.net/support",
+            "email": "support@lineberty.net"
+        },
+        "license": {
+            "name": "MIT License (MIT)",
+            "url": "http://opensource.org/licenses/MIT"
+        }
+    },
+    "host": "localhost:8083",
+    "schemes": [
+        "http"
+    ],
+    "basePath": "/api/v1",
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/send": {
+            "post": {
+                "tags": [
+                    "email"
+                ],
+                "summary": "Send email to the address email",
+                "description": "",
+                "operationId": "sendEmail",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "token",
+                        "description": "The authorization token",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "information needed to send the email",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/sendEmailRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Invalid parameters supplied"
+                    },
+                    "401": {
+                        "description": "Invalid token"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "sendEmailRequest": {
+            "required": [
+                "to",
+                "subject",
+                "text"
+            ],
+            "properties": {
+                "from": {
+                    "type": "string"
+                },
+                "to": {
+                    "type": "string"
+                },
+                "subject": {
+                    "type": "string"
+                },
+                "text": {
+                    "type": "string"
+                },
+                "html": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
