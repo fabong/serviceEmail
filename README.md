@@ -34,13 +34,13 @@ Return a 200 code status if the email is correctly sent.
 
 To run, you need to specify some environment variables with your own settings as :
 
-```
+```js
 config='{"from":"Email Service <donotrespond@test.net>","token":"1234"}' PORT=8083 node app.js
 ```
 
 Or modify the *config.js* and just run it like this :
 
-```
+```js
 node app.js
 ```
 
