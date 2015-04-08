@@ -10,7 +10,7 @@ exports.app.port = (process.env.PORT && parseInt(process.env.PORT) > 0) ? parseI
 exports.security = {};
 exports.security.token = envConf.token || '1234';
 
-exports.transporter = {};
-exports.transporter.from = envConf.from || 'Email Service <donotrespond@test.net>';
+exports.transport = {};
+exports.transport.from = envConf.from || 'Email Service <donotrespond@test.net>';
 
 
