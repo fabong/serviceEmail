@@ -27,7 +27,7 @@
         "application/json"
     ],
     "paths": {
-        "/send": {
+        "/email": {
             "post": {
                 "tags": [
                     "email"
