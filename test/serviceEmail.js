@@ -36,7 +36,7 @@ describe('Email send', function () {
             subject: 'TEST 1',
             text: 'This is a first test'
         };
-        var url = localUrl + '/api/v1/send';
+        var url = localUrl + '/api/v1/email';
         var opts = {url: url, method:'POST', json:true, headers: {token: token}, body: params};
 
         request(opts, function (error, response, body) {
@@ -55,7 +55,7 @@ describe('Email send', function () {
             subject: 'TEST 1',
             text: 'This is a first test'
         };
-        var url = localUrl + '/api/v1/send';
+        var url = localUrl + '/api/v1/email';
         var opts = {url: url, method:'POST', json:true, headers: {token: token}, body: params};
 
         request(opts, function (error, response, body) {
@@ -75,7 +75,7 @@ describe('Email send', function () {
             text: 'This is a first test',
             html: 'This is a <strong>third test</strong>'
         };
-        var url = localUrl + '/api/v1/send';
+        var url = localUrl + '/api/v1/email';
         var opts = {url: url, method:'POST', json:true, headers: {token: token}, body: params};
 
         request(opts, function (error, response, body) {
@@ -94,7 +94,7 @@ describe('Email send', function () {
             subject: 'TEST 3',
             html: 'This is a <strong>third test</strong>'
         };
-        var url = localUrl + '/api/v1/send';
+        var url = localUrl + '/api/v1/email';
         var opts = {url: url, method:'POST', json:true, headers: {token: token}, body: params};
 
         request(opts, function (error, response, body) {
@@ -107,7 +107,7 @@ describe('Email send', function () {
     it('with no parameter should return 400 Error', function (done) {
         transporterMock.expects('send').never();
         var params = {};
-        var url = localUrl + '/api/v1/send';
+        var url = localUrl + '/api/v1/email';
         var opts = {url: url, method:'POST', json:true, headers: {token: token}, body: params};
 
         request(opts, function (error, response, body) {
